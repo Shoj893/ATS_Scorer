@@ -1,12 +1,12 @@
 import os
 from pathlib import Path
 
-# Load .env from the project root (two levels up from this file) explicitly —
+# Load .env from the backend directory (one level up from this file) explicitly —
 # load_dotenv() with no args relies on caller-frame inspection that can fail
 # silently under uvicorn reload, leaving env vars unset.
 try:
     from dotenv import load_dotenv
-    _ENV_PATH = Path(__file__).resolve().parents[2] / '.env'
+    _ENV_PATH = Path(__file__).resolve().parents[1] / '.env'
     load_dotenv(_ENV_PATH)
 except ImportError:
     pass

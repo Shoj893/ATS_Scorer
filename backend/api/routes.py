@@ -214,4 +214,4 @@ async def generate_history_pdf(
         )
     except Exception as e:
         logger.error(f'Failed to generate PDF for history: {e}')
-        raise HTTPException(status_code=500, detail=f"Failed to generate PDF: {e}")
+        raise HTTPException(status_code=500, detail=f"Failed to generate PDF: {e}")           
