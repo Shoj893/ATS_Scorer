@@ -48,16 +48,6 @@ pip install -r requirements.txt
 python -m spacy download en_core_web_md
 ```
 
-WeasyPrint needs system libraries on Linux:
-
-```bash
-# Fedora
-sudo dnf install -y cairo pango gdk-pixbuf2 libffi
-
-# Debian / Ubuntu
-sudo apt install -y libcairo2 libpango-1.0-0 libpangoft2-1.0-0 libffi-dev
-```
-
 ### 3. Configure environment variables
 
 Copy the template and fill in your keys:
@@ -65,14 +55,6 @@ Copy the template and fill in your keys:
 ```bash
 cp .env.example .env
 ```
-
-You need:
-
-- A **Supabase** project — grab `SUPABASE_URL`, `SUPABASE_KEY` (service role), and `SUPABASE_ANON_KEY` from Project Settings → API.
-- A **Groq** API key from [console.groq.com](https://console.groq.com).
-- (Optional) Google OAuth set up in the Supabase dashboard if you want Google sign-in.
-
-The Streamlit frontend also reads Supabase config from `frontend/.streamlit/secrets.toml`. Copy `secrets.toml.example` to `secrets.toml` and fill it in.
 
 ### 4. Run the backend
 
